@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+TIME=5000
 IMG_PATH=/home/zero/Pictures/screenshots/
 
 

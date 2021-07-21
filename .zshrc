@@ -4,12 +4,16 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+alias graph='git log --all --decorate --oneline --graph'
+
+# export BROWSER=/usr/bin/firefox
 
 # PulseMixer volume Control Style
 export PULSEMIXER_BAR_STYLE="╭╶╮╴╰╯◆◇· ──"
 
 # Display neofetch
-neofetch
+#neofetch
+pfetch
 
 # Automatically cd into typed directory.
 setopt autocd	
@@ -45,10 +49,10 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Use blinking underline cursor on startup.
-echo -ne '\e[3 q'
+#echo -ne '\e[3 q'
 
 # Use underline blinking cursor for each new prompt.
-preexec() { echo -ne '\e[3 q' ;}
+#preexec() { echo -ne '\e[3 q' ;}
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
@@ -76,3 +80,4 @@ source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/nul
 
 # Load zsh-syntax-highlighting
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source $HOME/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh 2>/dev/null
