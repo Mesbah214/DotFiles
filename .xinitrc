@@ -49,7 +49,7 @@ xset r rate 210 40 &
 picom -b &
 
 # Restore wallpaper
-nitrogen --restore &
+~/.fehbg &
 
 # This starts dwm
 exec dwm

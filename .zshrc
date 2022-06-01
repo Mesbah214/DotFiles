@@ -1,20 +1,30 @@
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 # alias for lsd
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
-alias graph='git log --all --decorate --oneline --graph'
+alias clip='xclip -selection clipboard'
 
+# make for CS50
+alias make50='make CC=clang CFLAGS="-ggdb3 -O0 -std=c99 -Wall -Werror" LDLIBS="-lcs50 -lm"'
+
+# export path
+# export PATH="$HOME/.local/bin:$PATH"
 # export BROWSER=/usr/bin/firefox
+export PATH="$HOME/.local/bin:$PATH"
 
 # PulseMixer volume Control Style
 export PULSEMIXER_BAR_STYLE="╭╶╮╴╰╯◆◇· ──"
 
 # Display neofetch
 #neofetch
-pfetch
-
+#pfetch
+fm6000 -c random -n
 # Automatically cd into typed directory.
 setopt autocd	
 
