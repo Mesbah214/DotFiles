@@ -1,6 +1,15 @@
+# fetch program
+$HOME/.config/rxfetch/rxfetch
+
+# Required to write bangla
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+
+# node management package
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # alias for lsd
 alias ls='lsd'
@@ -10,21 +19,25 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias clip='xclip -selection clipboard'
 
+# alias for directory
+# alias tools='cd /run/media/zero/Tool'
+
 # make for CS50
 alias make50='make CC=clang CFLAGS="-ggdb3 -O0 -std=c99 -Wall -Werror" LDLIBS="-lcs50 -lm"'
 
 # export path
-# export PATH="$HOME/.local/bin:$PATH"
 # export BROWSER=/usr/bin/firefox
 export PATH="$HOME/.local/bin:$PATH"
+export Tools="/run/media/zero/Tools"
 
 # PulseMixer volume Control Style
-export PULSEMIXER_BAR_STYLE="╭╶╮╴╰╯◆◇· ──"
+#export PULSEMIXER_BAR_STYLE="╭╶╮╴╰╯◆◇· ──"
 
 # Display neofetch
 #neofetch
 #pfetch
-fm6000 -c random -n
+#fm6000 -c random -n
+
 # Automatically cd into typed directory.
 setopt autocd	
 
@@ -80,14 +93,17 @@ bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 bindkey '^[[P' delete-char
 
 # Suggest aliases for commands
-source $HOME/.zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null
+source $HOME/.config/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null
 
 # Load starship prompt theme
 eval "$(starship init zsh)"
 
 # Load auto suggestion
-source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 # Load zsh-syntax-highlighting
-source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source $HOME/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh 2>/dev/null
+source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

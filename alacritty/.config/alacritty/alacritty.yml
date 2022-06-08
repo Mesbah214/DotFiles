@@ -105,7 +105,7 @@ window:
 # Font configuration
 font:
   normal:
-    family: Operator Mono Book
+    family: FuraMono Nerd Font Mono
     style: Regular
 
   # bold:

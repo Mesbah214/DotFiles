@@ -2,7 +2,7 @@
 *.alpha: .90
 
 !! Set a default font and font size as below:
-*.font: FiraCode Nerd Font Mono:size=11
+*.font: Hurmit Nerd Font Mono:size=12
 
 /* name		dark	light */
 /* black	0	      8 */
