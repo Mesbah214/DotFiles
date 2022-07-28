@@ -1,6 +1,9 @@
 #
 # wm independent hotkeys
 #
+# launch thunar
+super + n
+	thunar
 
 # terminal emulator
 super + Return
@@ -8,11 +11,33 @@ super + Return
 
 # program launcher
 super + d
-	rofi -show run
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# launch browser
+super + w
+	google-chrome-stable
+
+# Volume controls
+F3
+  pactl set-sink-volume 0 +5%
+
+F2
+  pactl set-sink-volume 0 -5%
+
+F1
+  pactl set-sink-mute 0 toggle
+
+# Backlight control
+F12
+  xbacklight -inc +5
+
+F11
+  xbacklight -dec +5
+
 
 #
 # bspwm hotkeys
