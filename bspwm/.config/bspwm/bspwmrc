@@ -2,13 +2,13 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+# Compositor
+picom -b &
+
 # Set Wallpaper
-feh --bg-scale /run/media/zero/Fun_box/Wallpapers/nordic-wallpapers/wallpapers/ign_robots.png --no-fehbg 
+feh --bg-scale /run/media/zero/Fun_Box/Wallpapers/36d68w1uojj71.png --no-fehbg &
 
-lxpolkit &
-
-# Load polybar
-$HOME/.config/polybar/launch.sh
+# lxpolkit &
 
 bspc monitor -d 1 2 3 4 5 6
 
@@ -20,8 +20,24 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Google-chrome desktop='^2'
+bspc rule -a Alacritty state=floating
+bspc rule -a Google-chrome desktop='^3'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+# Load polybar
+$HOME/.config/polybar/launch.sh &
+
+# Faster cursor movement
+xset r rate 210 40 &
+
+# Restore cursor
+xsetroot -cursorname_name lerf_ptr &
+
+# Merge xresources
+xrdb -load ~/.config/X11/Xresources &
+
+# Swallow terminals
+pgrep bspswallow || "$HOME"/.config/bspwm/scripts/bspswallow & # window swallowing

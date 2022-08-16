@@ -3,11 +3,15 @@
 #
 # launch thunar
 super + n
-	thunar
+	pcmanfm
 
 # terminal emulator
 super + Return
 	st
+
+# terminal in floating mode
+super + shift + Return
+	alacritty
 
 # program launcher
 super + d
@@ -20,6 +24,10 @@ super + Escape
 # launch browser
 super + w
 	google-chrome-stable
+
+# launch power menu
+ctrl + x
+        $HOME/.config/rofi/powermenu.sh
 
 # Volume controls
 F3
