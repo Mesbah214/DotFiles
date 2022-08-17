@@ -1,137 +1,202 @@
 [module/bspwm]
 type = internal/bspwm
+
 inline-mode = false
-enable-click = true
 enable-scroll = false
 reverse-scroll = false
+
+enable-click = true
 fuzzy-match = true
 occupied-scroll = true
-format-font = 2
 
-ws-icon-0 = 1;
+
+ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
-ws-icon-4 = 5;ﭵ
-ws-icon-5 = 6;磊
+ws-icon-4 = 5;
+ws-icon-5 = 6;
 ws-icon-default =
 
 format = <label-state> <label-mode>
+format-font = 2
+
 label-monitor = %name%
 
-label-dimmed-foreground = #555
-; label-dimmed-underline = ${bar/top.primary}
-label-dimmed-focused-background = #f00
-label-dimmed-padding = 1
-
 label-focused = %icon%
-label-focused-foreground = #ffffff
-; label-focused-background = #3f3f3f
-label-focused-underline = #fba922
+label-focused-foreground = ${colors.aurora1}
+label-focused-background = ${colors.polar_night1}
 label-focused-padding = 1
 
 label-occupied = %icon%
-label-occupied-underline = #555555
+label-occupied-foreground = ${colors.aurora4}
+label-occupied-background = ${colors.polar_night1}
 label-occupied-padding = 1
 
 label-urgent = %icon%
 label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
+label-urgent-background = ${colors.polar_night1}
 label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = #55
+label-empty-foreground = ${colors.frost4}
+label-empty-background = ${colors.polar_night1}
 label-empty-padding = 1
 
-; label-separator = /
-label-separator-padding = 1
-label-separator-foreground = #ffb52a
+label-separator = "∙"
+label-separator-padding = 2
+label-separator-foreground = ${colors.aurora3}
+label-separator-background = ${colors.polar_night1}
 
-[module/title]
-type = internal/xwindow
-; Available tags:
-;   <label> (default)
-format = <label>
-; format-background = #000
-format-foreground = #fff
-format-padding = 4
+;#########################################################
+;#########################################################
 
-; Available tokens:
-;   %title%
-; Default: %title%
-label = %title%
-label-maxlen = 50
+[module/battery]
+type = internal/battery
 
-; Used instead of label when there is no window title
-; Available tokens:
-;   None
-label-empty = Empty
-label-empty-foreground = #fff
+full-at = 99
+low-at = 5
 
-[module/pulseaudio]
+battery = BAT0
+adapter = ADP1
+time-format = %H:%M
+
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+
+label-charging = %percentage%%
+label-charging-foreground = ${colors.frost1}
+label-charging-background = ${colors.polar_night1}
+
+label-discharging = %percentage%%
+label-discharging-foreground = ${colors.frost1}
+label-discharging-background = ${colors.polar_night1}
+
+label-full = 
+label-full-foreground = ${colors.frost3}
+label-full-background = ${colors.polar_night1}
+
+label-low = 
+label-low-foreground = ${colors.frost3}
+label-low-background = ${colors.polar_night1}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-padding-right = 1
+
+ramp-capacity-foreground = ${colors.frost3}
+ramp-capacity-background = ${colors.polar_night1}
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+animation-charging-foreground = ${colors.frost3}
+animation-charging-background = ${colors.polar_night1}
+animation-charging-padding = 1
+
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+animation-discharging-font = 4
+animation-charging-font = 4
+ramp-capacity-font = 4
+label-full-font = 4
+lable-low-font = 4
+
+; Only applies if <animation-low> is used
+; New in version 3.6.0
+animation-low-0 = !
+animation-low-1 = 
+animation-low-framerate = 200
+poll-interval = 5
+
+;############################################################
+;############################################################
+
 [module/pulseaudio]
 type = internal/pulseaudio
-; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
-; If not, uses default sink
 sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 
-; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
-; Default: true
 use-ui-max = true
 
-; Interval for volume increase/decrease (in percent points)
-; Default: 5
 interval = 5
 
-; Available tags:
-;   <label-volume> (default)
-;   <ramp-volume>
-;   <bar-volume>
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume><label-volume>
+label-volume-foreground = ${colors.frost3}
 
-; Available tags:
-;   <label-muted> (default)
-;   <ramp-volume>
-;   <bar-volume>
-;format-muted = <label-muted>
+label-muted = 婢 
+label-muted-font = 4
+label-muted-foreground = ${colors.snow_storm1}
+label-muted-background = ${colors.polar_night1}
 
-; Available tokens:
-;   %percentage% (default)
-;   %decibels%
-;label-volume = %percentage%%
+label-volume-background = ${colors.polar_night1}
 
-; Available tokens:
-;   %percentage% (default)
-;   %decibels%
-label-muted =  
-label-muted-foreground = #666
-
-; Only applies if <ramp-volume> is used
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-ramp-volume-font = 3
 
-; Right and Middle click
-click-right = pavucontrol
-; click-middle = 
+ramp-volume-font = 4
+ramp-volume-foreground = ${colors.aurora4}
+ramp-volume-background = ${colors.polar_night1}
+
+ramp-volume-padding-right = 1
+
+;########################################
+;########################################
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-font = 3
-; format-prefix-foreground = ${colors.primary}
+
+format-prefix = ""
+format-prefix-font = 4
+format-prefix-padding-right = 1
+format-prefix-foreground = ${colors.aurora5}
+format-prefix-background = ${colors.polar_night1}
+
 label = %percentage_used:2%%
+label-foreground = ${colors.frost1}
+label-background = ${colors.polar_night1}
+
+;##################################################
+;##################################################
 
 [module/cpu]
 type = internal/cpu
+
 interval = 2
+
 format-prefix = ""
-format-prefix-font = 4
-; format-prefix-foreground = ${colors.primary}
+format-prefix-padding-right = 1
+format-prefix-foreground = ${colors.aurora1}
+format-prefix-background = ${colors.polar_night1}
+format-font = 5
+
 label = %percentage:2%%
+label-foreground = ${colors.frost2}
+label-background = ${colors.polar_night1}
+
+
+;#################################################
+;#################################################
 
 [module/date]
 type = internal/date
@@ -142,109 +207,18 @@ time = %I:%M %p
 time-alt = %A, %d %B %Y
 
 format = <label>
-format-prefix = " "
+format-prefix = ""
+format-prefix-foreground = ${colors.aurora3}
+format-prefix-background = ${colors.polar_night1}
+format-prefix-padding-right = 1
 format-prefix-font = 3
-; format-prefix-foreground = ${color.RED}
 
 label = %time%
-; label-font = 3
+label-foreground = ${colors.frost1}
+label-background = ${colors.polar_night1}
 
-[module/battery]
-type = internal/battery
-format-prefix = "BAT "
-
-full-at = 99
-low-at = 5
-
-battery = BAT0
-adapter = ADP1
-time-format = %H:%M
-
-format-charging = <animation-charging> <label-charging>
-
-format-discharging = <ramp-capacity> <label-discharging>
-; Available tags:
-;   <label-full> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;format-full = <ramp-capacity> <label-full>
-
-; Format used when battery level drops to low-at
-; If not defined, format-discharging is used instead.
-; Available tags:
-;   <label-low>
-;   <animation-low>
-;   <bar-capacity>
-;   <ramp-capacity>
-; New in version 3.6.0
-;format-low = <label-low> <animation-low>
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw%
-;   %time%
-;   %consumption% (shows current charge rate in watts)
-label-charging = %percentage%%
-; label-charging = Charging %percentage%%
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw%
-;   %time%
-;   %consumption% (shows current discharge rate in watts)
-label-discharging = %percentage%%
-; label-discharging = Discharging %percentage%%
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw%
-label-full = Fully charged
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw%
-;   %time%
-;   %consumption% (shows current discharge rate in watts)
-; New in version 3.6.0
-label-low = BATTERY LOW
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-; Only applies if <bar-capacity> is used
-bar-capacity-width = 10
-
-; Only applies if <animation-charging> is used
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-; Framerate in milliseconds
-animation-charging-framerate = 750
-
-; Only applies if <animation-discharging> is used
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-3 = 
-animation-discharging-4 = 
-; Framerate in milliseconds
-animation-discharging-framerate = 500
-
-animation-discharging-font = 3
-animation-charging-font = 3
-ramp-capacity-font = 3
-
-; Only applies if <animation-low> is used
-; New in version 3.6.0
-animation-low-0 = !
-animation-low-1 = 
-animation-low-framerate = 200
-poll-interval = 5
+;#################################################
+;#################################################
 
 [settings]
 screenchange-reload = true

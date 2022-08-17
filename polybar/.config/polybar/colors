@@ -1,8 +1,20 @@
 [colors]
-background = #2e3440
-background-alt = #373B41
-foreground = #C5C8C6
-primary = #F0C674
-secondary = #8ABEB7
-alert = #A54242
-disabled = #707880
+polar_night1 = #2E3440
+polar_night2 = #3B4252
+polar_night3 = #434C5E
+polar_night4 = #4C566A
+
+snow_storm1 = #D8DEE9
+snow_storm2 = #E5E9F0
+snow_storm3 = #ECEFF4
+
+frost1 = #8FBCBB
+frost2 = #88C0D0
+frost3 = #81A1C1
+frost4 = #5E81AC
+
+aurora1 = #BF616A
+aurora2 = #D08770
+aurora3 = #EBCB8B
+aurora4 = #A3BE8C
+aurora5 = #B48EAD

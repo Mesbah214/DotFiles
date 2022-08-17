@@ -1,0 +1,25 @@
+[module/space-wide]
+type = custom/text
+content = "   "
+content-background = ${colors.polar_night1}
+
+[module/sep]
+type = custom/text
+content = ""
+content-padding = 2
+content-foreground = ${colors.snow_storm3}
+content-background = ${colors.polar_night1}
+
+[module/hcr0]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = #00000000
+content-foreground = ${colors.polar_night1}
+
+[module/hcr1]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = #00000000
+content-foreground = ${colors.polar_night1}
