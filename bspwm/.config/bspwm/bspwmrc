@@ -3,7 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Compositor
-picom -b &
+picom --experimental-backend &
 
 # Set Wallpaper
 feh --bg-scale /run/media/zero/Fun_Box/Wallpapers/36d68w1uojj71.png --no-fehbg &
