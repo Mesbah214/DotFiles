@@ -220,6 +220,19 @@ label-background = ${colors.polar_night1}
 ;#################################################
 ;#################################################
 
+[module/pacman-update]
+type = custom/script
+exec = pacman -Qu | wc -l
+interval = 1000000
+label = %output%
+label-background = ${colors.polar_night1}
+label-foreground = ${colors.frost2}
+format-prefix = ""
+format-prefix-padding-right = 1
+format-prefix-background = ${colors.polar_night1}
+format-prefix-foreground = ${colors.aurora2}
+format-prefix-font = 3
+
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
