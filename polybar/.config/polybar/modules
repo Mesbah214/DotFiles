@@ -223,7 +223,7 @@ label-background = ${colors.polar_night1}
 [module/pacman-update]
 type = custom/script
 exec = pacman -Qu | wc -l
-interval = 1000000
+interval = 1000
 label = %output%
 label-background = ${colors.polar_night1}
 label-foreground = ${colors.frost2}

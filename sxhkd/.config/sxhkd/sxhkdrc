@@ -11,7 +11,7 @@ super + Return
 
 # terminal in floating mode
 super + shift + Return
-	alacritty
+	tdrop -am -w 60% -y 30% -x 20% alacritty
 
 # program launcher
 super + d
@@ -26,7 +26,7 @@ super + w
 	google-chrome-stable
 
 # launch power menu
-ctrl + x
+super + shift + k
         $HOME/.config/rofi/powermenu.sh
 
 # Volume controls
@@ -46,6 +46,9 @@ F12
 F11
   xbacklight -dec +5
 
+# Screenshot
+super + shift + s
+  flameshot gui
 
 #
 # bspwm hotkeys

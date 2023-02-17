@@ -6,7 +6,8 @@ content-background = ${colors.polar_night1}
 [module/sep]
 type = custom/text
 content = ""
-content-padding = 2
+content-padding = 3
+content-font = 6
 content-foreground = ${colors.snow_storm3}
 content-background = ${colors.polar_night1}
 
