@@ -5,3 +5,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export FORGE_EMAIL="msbh214@gmail.com"
+# export FORGE_EMAIL=""
+# read -s FORGE_API_TOKEN
+export FORGE_API_TOKEN="ATATT3xFfGF0r5TMr45qvVYpSqckRHz6GymtWg4EYVBgvZuQfKR7I7lnkjLeddIJ7j45EfWt1Y66IpaA3Xsb-yqr6SqwvUmjvbtXfl4CdO5t6uXjdRSo1Dh_mC-telnYpg0QHdso0bUw3zx3O8e3HL16gcpKor6B2V1q_JNoN74dZGU9d5feiBM=D2527CCA"
+#export FORGE_EMAIL FORGE_API_TOKEN

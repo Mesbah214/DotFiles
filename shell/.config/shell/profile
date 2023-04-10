@@ -188,11 +188,3 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
-
-# Environment variables to flask app
-# export MAIL_SERVER=smtp.googlemail.com
-# export MAIL_PORT=587
-# export MAIL_USE_TLS=1
-# export MAIL_USERNAME=msbh214@gmail.com
-# export MAIL_PASSWORD=bjxuvzgkrpbzltoq
-
