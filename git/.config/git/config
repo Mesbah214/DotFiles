@@ -34,3 +34,5 @@
         br = branch
         ci = commit
 	st = status
+[safe]
+	directory = /run/media/one/Work/WorkSpace/projects/diamond
