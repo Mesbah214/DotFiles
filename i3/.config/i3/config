@@ -327,6 +327,7 @@ assign [class="(?i)google-chrome"] $ws3
 assign [class="Pcmanfm"] $ws4
 assign [class="thunderbird"] $ws6
 assign [class="TelegramDesktop"] $ws5
+assign [class="okular"] $ws8
 assign [class="qBittorrent"] $ws9
 
 # automatic set focus new window if it opens on another workspace than the current:
@@ -336,6 +337,7 @@ for_window [class=Pcmanfm] focus
 for_window [class=Thunderbird] focus
 for_window [class=TelegramDesktop] focus
 for_window [class=qBittorrent] focus
+for_window [class=okular] focus
 
 ##############
 # compositor #
