@@ -16,12 +16,18 @@ export LS_COLORS
 [ -f "$HOME/.config/shell/aliasrc" ] && source "$HOME/.config/shell/aliasrc"
 # load exports
 [ -f "$HOME/.config/shell/exports" ] && source "$HOME/.config/shell/exports"
-#load functions
+# load functions
 [ -f "$ZDOTDIR/zsh-functions" ] && source "$ZDOTDIR/zsh-functions"
 
 
 # Automatically cd into typed directory.
 setopt autocd	
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
 
 # Disable ctrl-s to freeze terminal.[]
 stty stop undef
@@ -30,11 +36,14 @@ stty stop undef
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Basic auto/tab complete:
-autoload -U compinit
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
 _comp_options+=(globdots)       # include hidden files
+
+# initialize completion with cached metadata file
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+
 
 # starts prompt in command mode
 # zle-line-init() { zle -K vicmd; }
@@ -68,3 +77,9 @@ afetch
 
 # Enable searching through history
 # bindkey '^R' history-incremental-pattern-search-backward
+
+# fzf
+if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+  source /usr/share/fzf/key-bindings.zsh
+  source /usr/share/fzf/completion.zsh
+fi
