@@ -1,10 +1,13 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
-local set = vim.o
+local set = vim.opt
 
 -- Set highlight on search
 set.hlsearch = false
+
+-- Theme BG
+set.termguicolors = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -68,9 +71,9 @@ set.tabstop = 2
 set.shiftwidth = 4
 
 --This is recommended by coc
-set.backup = false
-set.writebackup = false
-set.swapfile = false
+-- set.backup = false
+-- set.writebackup = false
+-- set.swapfile = false
 
 --Display long lines as just one line
 set.wrap = false
@@ -94,7 +97,7 @@ set.showtabline = 2
 set.timeoutlen = 500
 
 -- Vertical bar
-set.colorcolumn = "80"
+-- set.colorcolumn = "80"
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

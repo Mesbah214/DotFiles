@@ -25,6 +25,32 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
         { "folke/tokyonight.nvim", config = function() vim.cmd.colorscheme "tokyonight" end},
+        { "nvim-tree/nvim-web-devicons", opts = {} },
+        {
+            'nvim-mini/mini.pairs',
+            version = false,
+            config = function()
+              local pairs = require"mini.pairs"
+              pairs.setup()
+            end
+        },
+        {
+            'nvim-mini/mini.statusline',
+            version = false,
+            config = function()
+              local status_line = require"mini.statusline"
+              status_line.setup()
+            end
+        },
+
+        {
+            'nvim-mini/mini.comment',
+            version = false,
+            config = function()
+              local comment = require"mini.comment"
+              comment.setup()
+            end
+        },
         { import = "config.plugins" }
     },
 })
