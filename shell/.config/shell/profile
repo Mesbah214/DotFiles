@@ -14,6 +14,7 @@ export LESSHISTFILE=-
 # cleaning files
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"

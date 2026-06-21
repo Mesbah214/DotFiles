@@ -170,6 +170,10 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 # keybindings for different actions: #
 ######################################
+# clipboard
+exec_always --no-startup-id clipcatd
+bindsym $mod+i exec clipcat-menu insert
+bindsym $mod+m exec clipcat-menu remove
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
@@ -400,7 +404,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /mnt/media/Graphics/wallpapers-master/0253.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill /mnt/media/Graphics/wallpapers-master/0224.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
