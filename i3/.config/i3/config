@@ -294,7 +294,8 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id /usr/bin/google-chrome-stable
 bindsym $mod+n exec --no-startup-id /usr/bin/nautilus
-bindsym $mod+Delete exec --no-startup-id flameshot gui
+# bindsym $mod+Delete exec --no-startup-id flameshot gui
+bindsym $mod+Delete exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 
@@ -404,7 +405,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /mnt/media/Graphics/wallpapers-master/0224.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill /mnt/media/Graphics/wallpapers-master/0048.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
